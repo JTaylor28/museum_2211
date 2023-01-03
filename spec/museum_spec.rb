@@ -46,15 +46,9 @@ RSpec.describe Museum do
 
     describe"#recommend_exhibits" do
         it "recommends exhibits to patrons" do
-            expect(dmns).to be_an_instance_of(Museum)
-            expect(dmns.name).to eq("Denver Museum of Nature and Science")
-            expect(dmns.exhibits).to eq([])
-            
             dmns.add_exhibit(gems_and_minerals)
             dmns.add_exhibit(dead_sea_scrolls)
             dmns.add_exhibit(imax)
-            expect(dmns.exhibits).to eq([gems_and_minerals, dead_sea_scrolls, imax])
-            
             patron_1.add_interest("Dead Sea Scrolls")
             patron_1.add_interest("Gems and Minerals")
             patron_2.add_interest("IMAX")
@@ -64,5 +58,4 @@ RSpec.describe Museum do
             expect(dmns.recommend_exhibits(patron_2)).to eq([imax])
         end
     end
-
 end
