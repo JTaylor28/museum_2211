@@ -7,6 +7,10 @@ RSpec.describe Patron do
         Patron.new("Bob", 20)
     end
 
+    let(:patron_2) do 
+        Patron.new("Sally", 20)
+    end
+
     describe '#initialize' do 
         it "exhists" do 
             expect(patron_1).to be_an_instance_of(Patron)
